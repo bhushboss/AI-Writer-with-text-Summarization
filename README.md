@@ -20,7 +20,7 @@ A Flask web app using Hugging Face's BART for abstractive summarization of artic
 - Git.
 
 ### Local Development
-1. Clone: `git clone https://github.com/yourusername/ai-writer.git`
+1. Clone: `git clone https://github.com/bhushboss/AI-Writer-with-text-Summarization.git`
 2. Navigate: `cd ai-writer`
 3. Virtual env: `python -m venv venv` (activate: `source venv/bin/activate` on Unix, `venv\Scripts\activate` on Windows)
 4. Install: `pip install -r requirements.txt`
