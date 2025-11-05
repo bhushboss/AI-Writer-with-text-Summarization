@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI Writer - Text Summarizer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>AI Writer: Article Summarizer</h1>
+        <p>Paste your article below for an AI-powered summary using BART.</p>
+        
+        <form method="POST">
+            <textarea name="text" placeholder="Enter article text here..." rows="10" cols="80" required></textarea><br><br>
+            <button type="submit">Summarize</button>
+        </form>
+        
+        {% if summary %}
+        <div class="output">
+            <h2>Summary</h2>
+            <p><strong>Original Word Count:</strong> {{ orig_wc }} | <strong>Readability (Flesch):</strong> {{ orig_read }}</p>
+            <p><strong>Summary Word Count:</strong> {{ sum_wc }} | <strong>Readability (Flesch):</strong> {{ sum_read }}</p>
+            <p>{{ summary }}</p>
+        </div>
+        {% endif %}
+        
+        {% if history %}
+        <div class="history">
+            <h3>Recent Summaries (Last 3)</h3>
+            {% for entry in history %}
+            <div class="entry">
+                <p><strong>Original Snippet:</strong> {{ entry.original }}</p>
+                <p><strong>Summary:</strong> {{ entry.summary }}</p>
+                <p><strong>WC:</strong> {{ entry.orig_wc }} → {{ entry.sum_wc }} | <strong>Read:</strong> {{ entry.orig_read }} → {{ entry.sum_read }}</p>
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+    </div>
+</body>
+  </html>
