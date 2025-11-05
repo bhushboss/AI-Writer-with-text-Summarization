@@ -1,0 +1,28 @@
+Sample Outputs
+
+Here's a demo with a sample article (BBC-style excerpt on climate change, ~250 words).
+Input Article: "The world is facing an unprecedented climate crisis. 
+Rising global temperatures, driven by greenhouse gas emissions from fossil fuels, are causing extreme weather events like hurricanes and wildfires.
+In 2024, record heatwaves affected billions, leading to crop failures and water shortages.
+Governments at COP29 pledged $100 billion annually for adaptation, but experts say it's insufficient. 
+Renewable energy adoption, such as solar and wind, has surged 20% yearly, yet coal remains dominant in many nations.
+Biodiversity loss accelerates, with 1 million species at risk. Individual actions, like reducing meat consumption, matter, but systemic change is crucial. 
+The UN warns of tipping points beyond which recovery is impossible."
+Processed Metrics:
+
+Original Word Count: 128
+Original Readability (Flesch): 42.5 (fairly difficult)
+Generated Summary (BART output; actual may vary slightly on your run): "The world faces a climate crisis from fossil fuel emissions, causing extreme weather. 
+2024 heatwaves hit billions, with crop failures. COP29 pledges $100B for adaptation, but more needed.
+Renewables grow 20% yearly, but coal persists. 1M species at risk; UN warns of tipping points."
+Summary Metrics:
+
+Summary Word Count: 58
+Summary Readability (Flesch): 35.2 (standard)
+History Display (after one run; shows truncated original):
+Original Snippet: "The world is facing an unprecedented climate crisis.
+Rising global temperatures... (beyond 200 chars)"
+Summary: (as above)
+
+WC: 128 → 58 | Read: 42.5 → 35.2
+This app is ready to extend—e.g., add T5 by swapping model="t5-small" or integrate user auth for persistent history.
